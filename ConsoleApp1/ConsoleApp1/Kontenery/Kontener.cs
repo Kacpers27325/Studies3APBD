@@ -7,11 +7,11 @@ public abstract class Kontener
     public int Waga_wlasna { get;set; }
     public int Glebokosc { get;set; }
     public string Numer_seryjny { get;set; }
-    public int max_ladownosc { get;set; }
+    public double max_ladownosc { get;set; }
     public bool niebezpieczny { get; set; }
 
     
-    public Kontener(int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, string nume_seryjny, int max_ladownosc, bool niebezpieczny)
+    public Kontener(int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, string nume_seryjny, double max_ladownosc, bool niebezpieczny)
     {
         niebezpieczny = niebezpieczny;
         masa_ladunku = masa_ladunku;

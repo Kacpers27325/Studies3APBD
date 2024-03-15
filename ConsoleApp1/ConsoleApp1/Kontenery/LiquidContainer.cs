@@ -4,15 +4,30 @@ namespace DefaultNamespace;
 
 public class LiquidContainer : Kontener, IHazardnotifier
 {
-    public LiquidContainer(int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, string nume_seryjny, int max_ladownosc, bool niebezpieczny) : base(masa_ladunku, wysokosc, waga_wlasna, glebokosc, nume_seryjny, max_ladownosc, niebezpieczny)
+    public LiquidContainer(int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, string nume_seryjny, double max_ladownosc, bool niebezpieczny) : base(masa_ladunku, wysokosc, waga_wlasna, glebokosc, nume_seryjny, max_ladownosc, niebezpieczny)
     {
     }
 
-    public override void zaladuj(int a)
+    public override void zaladuj(int ile)
     {
+        if (niebezpieczny == true)
+        {
+            max_ladownosc = max_ladownosc / 2;
+        }
+        else
+        {
+            max_ladownosc = max_ladownosc*0.9;
+        }
         
-        Console.WriteLine();
-        base.zaladuj(a);
+        if (Masa_ladunku + ile <= max_ladownosc)
+        {
+            Masa_ladunku = Masa_ladunku + ile;
+        }
+        else
+        {
+            notify();
+            throw new Exception("OverfillException");
+        }
     }
 
     public void notify()
