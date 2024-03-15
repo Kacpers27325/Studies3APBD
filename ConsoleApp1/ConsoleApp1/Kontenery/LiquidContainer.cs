@@ -30,6 +30,11 @@ public class LiquidContainer : Kontener, IHazardnotifier
         }
     }
 
+    public override void oproznij()
+    {
+        Masa_ladunku=0;
+    }
+    
     public void notify()
     {
         throw new NotImplementedException();

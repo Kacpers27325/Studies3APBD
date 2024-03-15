@@ -22,7 +22,7 @@ public abstract class Kontener
         max_ladownosc = max_ladownosc;
     }
 
-    public void oproznij()
+    public virtual void oproznij()
     {
         Masa_ladunku=0;
     }
