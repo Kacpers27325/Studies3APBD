@@ -8,10 +8,12 @@ public abstract class Kontener
     public int Glebokosc { get;set; }
     public string Numer_seryjny { get;set; }
     public int max_ladownosc { get;set; }
+    public bool niebezpieczny { get; set; }
 
     
-    public Kontener(int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, string nume_seryjny, int max_ladownosc)
+    public Kontener(int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, string nume_seryjny, int max_ladownosc, bool niebezpieczny)
     {
+        niebezpieczny = niebezpieczny;
         masa_ladunku = masa_ladunku;
         wysokosc = wysokosc;
         waga_wlasna = waga_wlasna;
@@ -25,7 +27,7 @@ public abstract class Kontener
         Masa_ladunku=0;
     }
 
-    public void zaladuj(int ile)
+    public virtual void zaladuj(int ile)
     {
         if (Masa_ladunku + ile <= max_ladownosc)
         {
