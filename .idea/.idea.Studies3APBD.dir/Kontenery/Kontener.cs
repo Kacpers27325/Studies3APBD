@@ -2,13 +2,14 @@
 
 public class Kontener
 {
-    private int masa_ladunku;
-    private int wysokosc;
-    private int waga_wlasna;
-    private int glebokosc;
-    private string numer_seryjny;
-    private int max_ladownosc;
+    public int Masa_ladunku { get;set; }
+    public int Wysokosc { get;set; }
+    public int Waga_wlasna { get;set; }
+    public int Glebokosc { get;set; }
+    public string Numer_seryjny { get;set; }
+    public int max_ladownosc { get;set; }
 
+    
     public Kontener(int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, string nume_seryjny, int max_ladownosc)
     {
         masa_ladunku = masa_ladunku;
