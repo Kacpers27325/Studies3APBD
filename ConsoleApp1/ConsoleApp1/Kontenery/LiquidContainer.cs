@@ -39,4 +39,11 @@ public class LiquidContainer : Kontener, IHazardnotifier
     {
         throw new NotImplementedException();
     }
+    public override string ToString()
+    {
+        return "Kontener numer: "+Numer_seryjny + "\nMasa ladunku " + Masa_ladunku
+               +"\nNiebezpieczny: "+niebezpieczny + "\nGlebokosc "+Glebokosc
+               +"\nWaga wlasna: "+Waga_wlasna+"\nMax ladownosc: "+max_ladownosc
+               +"\nWysokosc: "+Wysokosc;
+    }
 }
