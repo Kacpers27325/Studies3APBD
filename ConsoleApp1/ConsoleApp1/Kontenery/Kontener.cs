@@ -38,4 +38,6 @@ public abstract class Kontener
             throw new Exception("OverfillException");
         }
     }
+    
+    
 }
