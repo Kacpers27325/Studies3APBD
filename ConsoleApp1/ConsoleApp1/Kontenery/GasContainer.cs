@@ -2,15 +2,22 @@
 
 namespace DefaultNamespace;
 
-public class GasContainer : LiquidContainer, IHazardnotifier
+public class GasContainer : Kontener, IHazardnotifier
 {
-    public GasContainer(int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, string nume_seryjny, double max_ladownosc, bool niebezpieczny) : base(masa_ladunku, wysokosc, waga_wlasna, glebokosc, nume_seryjny, max_ladownosc, niebezpieczny)
+    public GasContainer(int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, string nume_seryjny, double max_ladownosc) : base(masa_ladunku, wysokosc, waga_wlasna, glebokosc, nume_seryjny, max_ladownosc)
     {
     }
 
     public override void zaladuj(int ile)
     {
-        base.zaladuj(ile);
+        if (Masa_ladunku + Waga_wlasna + ile <= max_ladownosc)
+        {
+            Masa_ladunku = Masa_ladunku + ile;
+        }
+        else
+        {
+            notify();
+        }
     }
 
     public override void oproznij()
@@ -22,6 +29,6 @@ public class GasContainer : LiquidContainer, IHazardnotifier
 
     public void notify()
     {
-        throw new NotImplementedException();
+        throw new OverfillException("Zbyt pelny kontener: "+Numer_seryjny);
     }
 }

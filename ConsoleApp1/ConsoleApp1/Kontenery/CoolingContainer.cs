@@ -6,7 +6,7 @@ public class CoolingContainer : Kontener, IHazardnotifier
 {
     public double temp;
     public string kind;
-    public CoolingContainer(double temp, string kind, int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, string nume_seryjny, double max_ladownosc, bool niebezpieczny) : base(masa_ladunku, wysokosc, waga_wlasna, glebokosc, nume_seryjny, max_ladownosc, niebezpieczny)
+    public CoolingContainer(double temp, string kind, int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, string nume_seryjny, double max_ladownosc, bool niebezpieczny) : base(masa_ladunku, wysokosc, waga_wlasna, glebokosc, nume_seryjny, max_ladownosc)
     {
         temp = temp;
         kind = kind;

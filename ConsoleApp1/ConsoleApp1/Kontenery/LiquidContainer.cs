@@ -4,8 +4,10 @@ namespace DefaultNamespace;
 
 public class LiquidContainer : Kontener, IHazardnotifier
 {
-    public LiquidContainer(int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, string nume_seryjny, double max_ladownosc, bool niebezpieczny) : base(masa_ladunku, wysokosc, waga_wlasna, glebokosc, nume_seryjny, max_ladownosc, niebezpieczny)
+    public bool niebezpieczny;
+    public LiquidContainer(int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, string nume_seryjny, double max_ladownosc, bool niebezpieczny) : base(masa_ladunku, wysokosc, waga_wlasna, glebokosc, nume_seryjny, max_ladownosc)
     {
+        this.niebezpieczny = niebezpieczny;
     }
 
     public override void zaladuj(int ile)
@@ -19,16 +21,18 @@ public class LiquidContainer : Kontener, IHazardnotifier
             max_ladownosc = max_ladownosc*0.9;
         }
         
-        if (Masa_ladunku + ile <= max_ladownosc)
+        if (Masa_ladunku + ile + Waga_wlasna <= max_ladownosc)
         {
             Masa_ladunku = Masa_ladunku + ile;
         }
         else
         {
             notify();
-            throw new Exception("OverfillException");
+            throw new OverfillException("Nie mozna zaladować");
         }
     }
+    
+    
 
     public override void oproznij()
     {
@@ -37,7 +41,7 @@ public class LiquidContainer : Kontener, IHazardnotifier
     
     public void notify()
     {
-        throw new NotImplementedException();
+        throw new OverfillException("Niebezpieczna sytuacja w kontenerze "+Numer_seryjny);
     }
     public override string ToString()
     {
