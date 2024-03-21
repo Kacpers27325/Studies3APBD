@@ -34,6 +34,11 @@ coolingContainer.zaladuj(2500,4,"Frytki");
 Ship ship = new Ship(5, 10, 10000);
 
 ship.zaladuj(gasone);
-//ship.wypiszKontenery();
+ship.zaladuj(liquidone);
+ship.zaladuj(gasone);
 
+ship.wypiszKontenery();
 
+Console.WriteLine();
+ship.UsunKontenerZeStatku(gasone);
+ship.wypiszKontenery();

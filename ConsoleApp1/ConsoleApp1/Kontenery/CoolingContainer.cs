@@ -35,7 +35,6 @@ public class CoolingContainer : Kontener, IHazardnotifier
     {
         double mass = Masa_ladunku;
         base.oproznij();
-        base.zaladuj((int)(mass*0.05));
     }
 
     public void notify()

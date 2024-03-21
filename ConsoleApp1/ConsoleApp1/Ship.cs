@@ -1,5 +1,4 @@
 ﻿using DefaultNamespace;
-
 namespace ConsoleApp1;
 
 public class Ship
@@ -25,7 +24,10 @@ public class Ship
         {
             lista_kontenerow.Add(k);
             zaladowana_masa = zaladowana_masa + k.Masa_ladunku;
-
+        }
+        else
+        {
+            throw new OverfillException("Statek pełen");
         }
     }
     public void Zaladuj(List<Kontener> listaKontenerow)
@@ -40,7 +42,7 @@ public class Ship
             else
             {
                 Console.WriteLine("Przekroczono maksymalną wagę. Nie można załadować więcej kontenerów.");
-                break; // Przerwij pętlę jeśli przekroczono maksymalną wagę
+                break;
             }
         }
     }
@@ -69,12 +71,4 @@ public class Ship
             Console.WriteLine(k.GetType());
         }
     }
-
-
-
-
-
-
-
-
 }
