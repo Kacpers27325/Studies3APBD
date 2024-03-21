@@ -6,21 +6,28 @@ public class CoolingContainer : Kontener, IHazardnotifier
 {
     public double temp;
     public string kind;
-    public CoolingContainer(double temp, string kind, int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, string nume_seryjny, double max_ladownosc, bool niebezpieczny) : base(masa_ladunku, wysokosc, waga_wlasna, glebokosc, nume_seryjny, max_ladownosc)
+    public CoolingContainer(double temp, string kind, int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, string nume_seryjny, double max_ladownosc) : base(masa_ladunku, wysokosc, waga_wlasna, glebokosc, nume_seryjny, max_ladownosc)
     {
-        temp = temp;
-        kind = kind;
+        this.temp = temp;
+        this.kind = kind;
     }
 
-    public void zaladuj(int ile, int temperatura_produktu)
+    public void zaladuj(int ile, int temperatura_produktu, string rodzaj_produktu)
     {
-        if (temp > temperatura_produktu)
+        if (temp >= temperatura_produktu)
         {
-            base.zaladuj(ile);    
+            if (rodzaj_produktu.Equals(kind))
+            {
+                base.zaladuj(ile);     
+            }
+            else
+            {
+                Console.WriteLine("Rozne rodzaje kontenerow");
+            }
         }
         else
         {
-            
+            Console.WriteLine("Zbyt niska temperatura kontenera");
         }
     }
 
@@ -33,6 +40,6 @@ public class CoolingContainer : Kontener, IHazardnotifier
 
     public void notify()
     {
-        throw new NotImplementedException();
+        throw new OverfillException("Kontener przeladowany: "+ Numer_seryjny);
     }
 }

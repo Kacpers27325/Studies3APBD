@@ -1,6 +1,7 @@
 ﻿
 using System.Security.AccessControl;
 using System.Security.Cryptography;
+using ConsoleApp1;
 using DefaultNamespace;
 
 
@@ -19,5 +20,20 @@ Console.WriteLine(gasone.ToString());
 gasone.oproznij();
 Console.WriteLine();
 Console.WriteLine(gasone.ToString());
+Console.WriteLine();
+
+
+CoolingContainer coolingContainer = new CoolingContainer(5, "Frytki", 1000, 1000,
+    500, 500, "KON-1-C", 4000);
+
+Console.WriteLine(coolingContainer);
+Console.WriteLine();
+coolingContainer.zaladuj(2500,4,"Frytki");
+
+
+Ship ship = new Ship(5, 10, 10000);
+
+ship.zaladuj(gasone);
+//ship.wypiszKontenery();
 
 

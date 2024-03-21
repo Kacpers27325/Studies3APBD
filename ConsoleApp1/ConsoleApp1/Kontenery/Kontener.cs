@@ -35,7 +35,7 @@ public abstract class Kontener
         }
         else
         {
-            throw new Exception("OverfillException");
+            throw new Exception("OverfillException "+Numer_seryjny);
         }
     }
     public override string ToString()
