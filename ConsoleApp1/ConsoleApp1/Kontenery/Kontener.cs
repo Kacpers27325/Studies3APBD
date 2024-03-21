@@ -11,14 +11,13 @@ public abstract class Kontener
     public bool niebezpieczny { get; set; }
 
     
-    public Kontener(int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, string nume_seryjny, double max_ladownosc)
+    public Kontener(int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, double max_ladownosc)
     {
         this.niebezpieczny = niebezpieczny;
         this.Masa_ladunku = masa_ladunku;
         this.Wysokosc = wysokosc;
         this.Waga_wlasna = waga_wlasna;
         this.Glebokosc = glebokosc;
-        this.Numer_seryjny = nume_seryjny;
         this.max_ladownosc = max_ladownosc;
     }
 

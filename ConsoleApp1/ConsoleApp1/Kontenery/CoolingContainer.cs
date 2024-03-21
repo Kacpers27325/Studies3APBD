@@ -6,10 +6,12 @@ public class CoolingContainer : Kontener, IHazardnotifier
 {
     public double temp;
     public string kind;
-    public CoolingContainer(double temp, string kind, int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, string nume_seryjny, double max_ladownosc) : base(masa_ladunku, wysokosc, waga_wlasna, glebokosc, nume_seryjny, max_ladownosc)
+    private int numer =  1;
+    public CoolingContainer(double temp, string kind, int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, string nume_seryjny, double max_ladownosc) : base(masa_ladunku, wysokosc, waga_wlasna, glebokosc, max_ladownosc)
     {
         this.temp = temp;
         this.kind = kind;
+        this.Numer_seryjny = "KON-C-"+numer++;
     }
 
     public void zaladuj(int ile, int temperatura_produktu, string rodzaj_produktu)

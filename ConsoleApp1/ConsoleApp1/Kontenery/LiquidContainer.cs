@@ -5,9 +5,11 @@ namespace DefaultNamespace;
 public class LiquidContainer : Kontener, IHazardnotifier
 {
     public bool niebezpieczny;
-    public LiquidContainer(int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, string nume_seryjny, double max_ladownosc, bool niebezpieczny) : base(masa_ladunku, wysokosc, waga_wlasna, glebokosc, nume_seryjny, max_ladownosc)
+    private int numer = 1;
+    public LiquidContainer(int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, string nume_seryjny, double max_ladownosc, bool niebezpieczny) : base(masa_ladunku, wysokosc, waga_wlasna, glebokosc, max_ladownosc)
     {
         this.niebezpieczny = niebezpieczny;
+        this.Numer_seryjny = "KON-L-"+numer++;
     }
 
     public override void zaladuj(int ile)

@@ -4,8 +4,10 @@ namespace DefaultNamespace;
 
 public class GasContainer : Kontener, IHazardnotifier
 {
-    public GasContainer(int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, string nume_seryjny, double max_ladownosc) : base(masa_ladunku, wysokosc, waga_wlasna, glebokosc, nume_seryjny, max_ladownosc)
+    private static int numer = 1;
+    public GasContainer(int masa_ladunku, int wysokosc, int waga_wlasna, int glebokosc, double max_ladownosc) : base(masa_ladunku, wysokosc, waga_wlasna, glebokosc, max_ladownosc)
     {
+        this.Numer_seryjny = "KON-G-"+numer++;
     }
 
     public override void zaladuj(int ile)

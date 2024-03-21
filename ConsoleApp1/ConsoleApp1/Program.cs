@@ -12,8 +12,12 @@ liquidone.zaladuj(2470);
 Console.WriteLine(liquidone.ToString());
 
 
-GasContainer gasone = new GasContainer(100, 500, 1000, 900, "KON-1-G", 5000);
+GasContainer gasone = new GasContainer(100, 500, 1000, 900, 5000);
+GasContainer gasonee = new GasContainer(100, 500, 1000, 900, 5000);
 
+
+Console.WriteLine("AAAAA");
+Console.WriteLine(gasonee.ToString());
 Console.WriteLine();
 gasone.zaladuj(3900);
 Console.WriteLine(gasone.ToString());
